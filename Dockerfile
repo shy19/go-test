@@ -15,13 +15,13 @@ RUN mkdir -p /root/gopath/bin
 ENV GOPATH /root/gopath
 
 # copy source files
-#RUN mkdir -p /root/gopath/src/server
-#COPY main.go /root/gopath/src/server/
+RUN mkdir -p /root/gopath/src/server
+COPY main.go /root/gopath/src/server/
 
 # build the server
 WORKDIR /root/gopath/src/server
-#RUN go build -o server.bin main.go
+RUN go build -o server.bin main.go
 
 # startup the server
-#CMD /root/gopath/src/server/server.bin
-CMD /bin/bash
+CMD /root/gopath/src/server/server.bin
+#CMD /bin/bash
